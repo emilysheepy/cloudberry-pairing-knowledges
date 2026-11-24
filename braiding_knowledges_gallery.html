@@ -187,6 +187,7 @@ body {
 
 /* Speaker portrait */
 .portrait {
+  position: relative;
   grid-column: 1;
   grid-row: 2;
   overflow: hidden;
@@ -207,21 +208,7 @@ body {
   }
 }
 
-/* Portrait placeholder */
-.portrait-placeholder {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 12px;
-  text-align: center;
-  font-size: 14px;
-  color: #173c35;
-  background: #cbd5cc;
-}
-.portrait { position: relative; }
-
-/* Affiliation and expanded quotation */
+/* Speaker introduction and expanded quotation */
 .content {
   grid-column: 2;
   grid-row: 2;
@@ -232,17 +219,11 @@ body {
   padding: 10px 24px 28px;
   border-top: 1px solid rgba(23,60,53,.17);
 }
-.affiliation {
-  font-size: 14px;
+.bio {
+  font-size: 16px;
   line-height: 1.6;
-  color: #4a5a54;
+  color: #173c35;
   margin: 0;
-}
-.affiliation span {
-  display: block;
-}
-.affiliation span + span {
-  margin-top: 4px;
 }
 .card.open .content {
   justify-content: flex-start;
@@ -406,9 +387,9 @@ body {
     padding: 15px 18px 18px;
     min-height: 0;
   }
-  .affiliation {
-    font-size: 14px;
-    line-height: 1.42;
+  .bio {
+    font-size: 16px;
+    line-height: 1.6;
   }
   .quote-panel blockquote {
     font-size: 17px;
@@ -455,7 +436,7 @@ body {
 <section aria-label="Speaker quotations" class="grid">
 <article class="card" id="card-1">
 <div class="card-header"><h2>Elder Mary Jane Johnson (Gùdia)<span class="topic">on bringing different strengths and knowledge together</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Elder Mary Jane Johnson (Gùdia)" class="close-trigger" hidden="" type="button">
 </button>
@@ -463,9 +444,7 @@ body {
 <div class="portrait"><img alt="Portrait of Elder Mary Jane Johnson (Gùdia)" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-1"><p class="affiliation"><span>Lhu’ààn Mân Ku Dań Elder, Kluane First Nation</span>
-<span>Research Management Committee and Canadian Advisory Committee, Braiding Knowledges Canada</span>
-</p>
+<div class="summary" id="summary-1"><p class="bio">Mary Jane is a Lhu’ààn Mân Ku Dań Elder from Kluane First Nation. She contributes to Braiding Knowledges Canada through her involvement in the Research Management Committee and Canadian Advisory Committee.</p>
 </div>
 <div class="quote-panel" hidden="" id="quote-1"><blockquote>Collaborative work means you and I decide together how we're going to move forward. We look at the strengths of each other, we look at the strengths of each other. […] Two of us together, we put our knowledge together. We have different kind of skill sets, different way of looking at resources.</blockquote>
 <div class="audio-wrap">
@@ -478,18 +457,14 @@ body {
 </article>
 <article class="card" id="card-2">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on making space for Indigenous ways of knowing</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield" class="close-trigger" hidden="" type="button">
 </button>
 </div>
 <div class="portrait"><!-- Temporary portrait source: https://www.ualberta.ca/en/supporting-indigenous-language-revitalization/media-library/glanfield_photo-770x1036.jpg --><img alt="Portrait of Florence Glanfield" class="photo" referrerpolicy="no-referrer" src="https://www.ualberta.ca/en/supporting-indigenous-language-revitalization/media-library/glanfield_photo-770x1036.jpg"/></div>
 <div class="content">
-<div class="summary" id="summary-2"><p class="affiliation"><span>Métis Nation of Alberta</span>
-<span>Vice-Provost, Indigenous Programming and Research</span>
-<span>Professor of Mathematics Education</span>
-<span>University of Alberta</span>
-</p>
+<div class="summary" id="summary-2"><p class="bio">Florence is a member of the Métis Nation of Alberta and a Professor of Mathematics Education at the University of Alberta, where she also serves as Vice-Provost, Indigenous Programming and Research.</p>
 </div>
 <div class="quote-panel" hidden="" id="quote-2"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
@@ -502,16 +477,14 @@ body {
 </article>
 <article class="card" id="card-3">
 <div class="card-header"><h2>Bill Snow<span class="topic">on why pairing knowledges is important</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Bill Snow" class="close-trigger" hidden="" type="button">
 </button>
 </div>
 <div class="portrait"><!-- Temporary portrait source: https://cwf-fcf.org/adobe/dynamicmedia/deliver/dm-aid--db3a7e45-ecaf-4aef-8369-2f1181683f8b/billsnow.jpg?preferwebp=true&quality=85&width=1600 --><img alt="Portrait of Bill Snow" class="photo" referrerpolicy="no-referrer" src="https://cwf-fcf.org/adobe/dynamicmedia/deliver/dm-aid--db3a7e45-ecaf-4aef-8369-2f1181683f8b/billsnow.jpg?preferwebp=true&amp;quality=85&amp;width=1600"/></div>
 <div class="content">
-<div class="summary" id="summary-3"><p class="affiliation"><span>Consultation Manager for Stoney Nakoda Nation</span>
-<span>Bison Cultural Project, Banff National Park, Alberta</span>
-</p>
+<div class="summary" id="summary-3"><p class="bio">Bill is the Consultation Manager for Stoney Nakoda Nation. His work includes involvement in the Bison Cultural Project in Banff National Park, Alberta.</p>
 </div>
 <div class="quote-panel" hidden="" id="quote-3"><blockquote>I think braiding knowledge is the culmination of the two worldviews, the Western scientific view and the traditional knowledge view ... When we have imbalances in those two worldviews we can end up with processes or results that are not reflective of our true values or our true knowledge.</blockquote>
 <div class="audio-wrap">
@@ -524,15 +497,14 @@ body {
 </article>
 <article class="card" id="card-4">
 <div class="card-header"><h2>Ken Cripps<span class="topic">on making better-informed decisions</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Ken Cripps" class="close-trigger" hidden="" type="button">
 </button>
 </div>
 <div class="portrait"><!-- Temporary portrait source: https://www.nationalobserver.com/sites/default/files/styles/person_card_default_lg_2x/public/img/2026/03/08/ken_cripps-img_0944.jpeg?itok=iA5qnW8d --><img alt="Portrait of Ken Cripps" class="photo" referrerpolicy="no-referrer" src="https://www.nationalobserver.com/sites/default/files/styles/person_card_default_lg_2x/public/img/2026/03/08/ken_cripps-img_0944.jpeg?itok=iA5qnW8d"/></div>
 <div class="content">
-<div class="summary" id="summary-4"><p class="affiliation"><span>Program Director/Biologist, Central Coast Indigenous Resource Alliance (CCIRA)</span>
-</p>
+<div class="summary" id="summary-4"><p class="bio">Ken is a biologist and Program Director at the Central Coast Indigenous Resource Alliance (CCIRA). His perspective on braiding knowledges emphasizes respectful collaboration and informed decision-making.</p>
 </div>
 <div class="quote-panel" hidden="" id="quote-4"><blockquote>In its simplest form, it's really about bringing knowledge and information together in a respectful way to better understand the issues you're up against and to make informed decisions.</blockquote>
 <div class="audio-wrap">
@@ -545,15 +517,14 @@ body {
 </article>
 <article class="card" id="card-5">
 <div class="card-header"><h2>Alida Oegema Thomas<span class="topic">on creating more equitable and caring solutions</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Alida Oegema Thomas" class="close-trigger" hidden="" type="button">
 </button>
 </div>
 <div class="portrait"><!-- Temporary portrait source: https://cfcj.cms.arts.ubc.ca/wp-content/uploads/sites/45/2023/02/Alida-Oegema-Thomas-Photo.jpeg --><img alt="Portrait of Alida Oegema Thomas" class="photo" referrerpolicy="no-referrer" src="https://cfcj.cms.arts.ubc.ca/wp-content/uploads/sites/45/2023/02/Alida-Oegema-Thomas-Photo.jpeg"/></div>
 <div class="content">
-<div class="summary" id="summary-5"><p class="affiliation"><span>Manager, Evaluation, First Nations Health Authority</span>
-</p>
+<div class="summary" id="summary-5"><p class="bio">Alida is the Manager of Evaluation at the First Nations Health Authority. Her perspective on braiding knowledges emphasizes the integrity and diversity of Indigenous knowledges alongside Western approaches.</p>
 </div>
 <div class="quote-panel" hidden="" id="quote-5"><blockquote>It's really upholding and uplifting the integrity of Indigenous knowledges, the diversity of Indigenous knowledges, alongside Western approaches. So, that kind of two wings of an eagle, or the Two-Eyed Seeing approach, that with both, we can come up with the most equitable, most just, most caring solutions to the collective problems in front of us.</blockquote>
 <div class="audio-wrap">
@@ -566,16 +537,14 @@ body {
 </article>
 <article class="card" id="card-6">
 <div class="card-header"><h2>Terry Dorward<span class="topic">on applying modern technology with Indigenous values</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Terry Dorward" class="close-trigger" hidden="" type="button">
 </button>
 </div>
 <div class="portrait"><!-- Temporary portrait source: https://radnetwork.ca/wp-content/uploads/2024/07/Terry-headshot-square-e1720800900105.jpg --><img alt="Portrait of Terry Dorward" class="photo" referrerpolicy="no-referrer" src="https://radnetwork.ca/wp-content/uploads/2024/07/Terry-headshot-square-e1720800900105.jpg"/></div>
 <div class="content">
-<div class="summary" id="summary-6"><p class="affiliation"><span>Tla-o-qui-aht First Nation</span>
-<span>West Coast IPCA Conservation Director, ISAAK OLAM Foundation</span>
-</p>
+<div class="summary" id="summary-6"><p class="bio">Terry is from Tla-o-qui-aht First Nation and serves as West Coast IPCA Conservation Director at the ISAAK OLAM Foundation. His perspective explores the relationship between modern technology, Indigenous values and reconnecting to the land.</p>
 </div>
 <div class="quote-panel" hidden="" id="quote-6"><blockquote>Modern technology is very beneficial to what we can adopt in our healing process of reconnecting to the land. […] We need to utilize the tools that are before us in a good way. I think that's what decolonization is all about—is creating something new, but still continuing with our same values, our teachings […] something new that fits the times.</blockquote>
 <div class="audio-wrap">
