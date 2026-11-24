@@ -20,7 +20,7 @@ body {
   padding: clamp(18px,3.5vw,56px);
 }
 .page {
-  max-width: 1450px;
+  max-width: 1400px;
   margin: auto;
 }
 .eyebrow {
@@ -56,6 +56,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
+  align-items: start;
   gap: 26px;
 }
 .card {
@@ -91,6 +92,7 @@ body {
 }
 .card-header h2 {
   font: 400 clamp(23px,2.3vw,31px)/1.12 Georgia,serif;
+  letter-spacing: normal;
   margin: 0;
   overflow-wrap: normal;
 }
@@ -100,6 +102,7 @@ body {
   font-size: .78em;
   line-height: 1.22;
   font-style: italic;
+  font-weight: 400;
   color: #d2dfd7;
 }
 
@@ -167,8 +170,11 @@ body {
   cursor: pointer;
 }
 .open-trigger:focus-visible,.close-trigger:focus-visible {
-  outline: 4px solid #145c4d;
-  outline-offset: -5px;
+  outline: none;
+}
+.card:has(.open-trigger:focus-visible, .close-trigger:focus-visible) {
+  outline: 3px solid #145c4d;
+  outline-offset: 4px;
 }
 .card.open .corner-view {
   display: none;
@@ -269,32 +275,54 @@ body {
 }
 
 /* Responsive layout */
-@media (min-width:1480px) {
-  .grid {
-    grid-template-columns: repeat(3,minmax(0,1fr));
+@media (min-width:561px) {
+  .card {
+    grid-template-columns: 34% minmax(0,66%);
+    grid-template-rows: auto 1fr;
+    min-height: 0;
+    background: #214e45;
   }
   .card-header {
-    padding-left: 19px;
-    padding-right: 155px;
+    display: block;
+    min-height: 0;
+    padding: 18px 20px 16px;
   }
   .card-header h2 {
     font-size: 25px;
+    font-weight: 400;
   }
-  .content,.card.open .content {
-    padding-left: 19px;
-    padding-right: 19px;
+  .card-header h2::before {
+    content: "";
+    float: right;
+    width: 102px;
+    height: 48px;
   }
-  .affiliation {
-    font-size: 13px;
+  .card-header .topic { clear: none; margin-top: 5px; font-size: .74em; line-height: 1.28; }
+  .corner,.close-trigger {
+    width: 106px;
+    height: 48px;
+    bottom: auto;
   }
+  .corner { padding: 5px 7px 5px 20px; }
+  .corner-view { font-size: 13px; }
+  .corner-view svg { width: 26px; height: 26px; }
+  .corner-close { font-size: 26px; }
+  .portrait {
+    align-self: start;
+    aspect-ratio: 4/5;
+    min-height: 0;
+    position: relative;
+    width: 100%;
+  }
+  .photo { position: absolute; inset: 0; object-position: center top; }
+  .content, .card.open .content { padding: 14px 20px 18px; }
+  .content { background: #e5e7db; }
 }
 @media (max-width:1000px) {
   .grid {
     grid-template-columns: 1fr;
   }
-  .card {
-    min-height: 350px;
-  }
+
 }
 @media (max-width:560px) {
   body {
