@@ -232,17 +232,18 @@ body {
   padding: 14px 24px 28px;
   border-top: 0;
 }
-.card.open .portrait {
-  display: block;
-}
-.quote-panel {
+.quote-panel:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   animation: fade .25s ease;
 }
 .quote-panel blockquote {
-  font: clamp(17px,1.45vw,19px)/1.48 Georgia,serif;
-  margin: 0 0 25px;
+  font: clamp(16px,1.25vw,18px)/1.45 Georgia,serif;
+  margin: 0 0 20px;
 }
 .audio-wrap {
+  margin-top: auto;
   border-top: 1px solid #86a69a;
   padding-top: 14px;
   display: flex;
@@ -275,6 +276,13 @@ body {
 }
 
 /* Responsive layout */
+@media (min-width:1001px) {
+  /* Equalize row height only when both disclosures are expanded. */
+  .card.open:nth-child(odd):has(+ .card.open),
+  .card.open:nth-child(odd) + .card.open {
+    align-self: stretch;
+  }
+}
 @media (min-width:561px) {
   .card {
     grid-template-columns: 36% minmax(0,64%);
@@ -446,7 +454,7 @@ body {
 <div class="content">
 <div class="summary" id="summary-1"><p class="bio">Mary Jane is a Lhu’ààn Mân Ku Dań Elder from Kluane First Nation. She contributes to Braiding Knowledges Canada through her involvement in the Research Management Committee and Canadian Advisory Committee.</p>
 </div>
-<div class="quote-panel" hidden="" id="quote-1"><blockquote>Collaborative work means you and I decide together how we're going to move forward. We look at the strengths of each other, we look at the strengths of each other. […] Two of us together, we put our knowledge together. We have different kind of skill sets, different way of looking at resources.</blockquote>
+<div class="quote-panel" hidden="" id="quote-1"><blockquote>“Collaborative work means you and I decide together how we're going to move forward. We look at the strengths of each other, we look at the strengths of each other. […] Two of us together, we put our knowledge together. We have different kind of skill sets, different way of looking at resources.”</blockquote>
 <div class="audio-wrap">
 <button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
 </div>
@@ -466,7 +474,7 @@ body {
 <div class="content">
 <div class="summary" id="summary-2"><p class="bio">Florence is a member of the Métis Nation of Alberta and a Professor of Mathematics Education at the University of Alberta, where she also serves as Vice-Provost, Indigenous Programming and Research.</p>
 </div>
-<div class="quote-panel" hidden="" id="quote-2"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
+<div class="quote-panel" hidden="" id="quote-2"><blockquote>“Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.”</blockquote>
 <div class="audio-wrap">
 <button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
 </div>
@@ -486,7 +494,7 @@ body {
 <div class="content">
 <div class="summary" id="summary-3"><p class="bio">Bill is the Consultation Manager for Stoney Nakoda Nation. His work includes involvement in the Bison Cultural Project in Banff National Park, Alberta.</p>
 </div>
-<div class="quote-panel" hidden="" id="quote-3"><blockquote>I think braiding knowledge is the culmination of the two worldviews, the Western scientific view and the traditional knowledge view ... When we have imbalances in those two worldviews we can end up with processes or results that are not reflective of our true values or our true knowledge.</blockquote>
+<div class="quote-panel" hidden="" id="quote-3"><blockquote>“I think braiding knowledge is the culmination of the two worldviews, the Western scientific view and the traditional knowledge view ... When we have imbalances in those two worldviews we can end up with processes or results that are not reflective of our true values or our true knowledge.”</blockquote>
 <div class="audio-wrap">
 <button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
 </div>
@@ -506,7 +514,7 @@ body {
 <div class="content">
 <div class="summary" id="summary-4"><p class="bio">Ken is a biologist and Program Director at the Central Coast Indigenous Resource Alliance (CCIRA). His perspective on braiding knowledges emphasizes respectful collaboration and informed decision-making.</p>
 </div>
-<div class="quote-panel" hidden="" id="quote-4"><blockquote>In its simplest form, it's really about bringing knowledge and information together in a respectful way to better understand the issues you're up against and to make informed decisions.</blockquote>
+<div class="quote-panel" hidden="" id="quote-4"><blockquote>“In its simplest form, it's really about bringing knowledge and information together in a respectful way to better understand the issues you're up against and to make informed decisions.”</blockquote>
 <div class="audio-wrap">
 <button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
 </div>
@@ -526,7 +534,7 @@ body {
 <div class="content">
 <div class="summary" id="summary-5"><p class="bio">Alida is the Manager of Evaluation at the First Nations Health Authority. Her perspective on braiding knowledges emphasizes the integrity and diversity of Indigenous knowledges alongside Western approaches.</p>
 </div>
-<div class="quote-panel" hidden="" id="quote-5"><blockquote>It's really upholding and uplifting the integrity of Indigenous knowledges, the diversity of Indigenous knowledges, alongside Western approaches. So, that kind of two wings of an eagle, or the Two-Eyed Seeing approach, that with both, we can come up with the most equitable, most just, most caring solutions to the collective problems in front of us.</blockquote>
+<div class="quote-panel" hidden="" id="quote-5"><blockquote>“It's really upholding and uplifting the integrity of Indigenous knowledges, the diversity of Indigenous knowledges, alongside Western approaches. So, that kind of two wings of an eagle, or the Two-Eyed Seeing approach, that with both, we can come up with the most equitable, most just, most caring solutions to the collective problems in front of us.”</blockquote>
 <div class="audio-wrap">
 <button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
 </div>
@@ -546,7 +554,7 @@ body {
 <div class="content">
 <div class="summary" id="summary-6"><p class="bio">Terry is from Tla-o-qui-aht First Nation and serves as West Coast IPCA Conservation Director at the ISAAK OLAM Foundation. His perspective explores the relationship between modern technology, Indigenous values and reconnecting to the land.</p>
 </div>
-<div class="quote-panel" hidden="" id="quote-6"><blockquote>Modern technology is very beneficial to what we can adopt in our healing process of reconnecting to the land. […] We need to utilize the tools that are before us in a good way. I think that's what decolonization is all about—is creating something new, but still continuing with our same values, our teachings […] something new that fits the times.</blockquote>
+<div class="quote-panel" hidden="" id="quote-6"><blockquote>“Modern technology is very beneficial to what we can adopt in our healing process of reconnecting to the land. […] We need to utilize the tools that are before us in a good way. I think that's what decolonization is all about—is creating something new, but still continuing with our same values, our teachings […] something new that fits the times.”</blockquote>
 <div class="audio-wrap">
 <button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
 </div>
