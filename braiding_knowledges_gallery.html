@@ -436,12 +436,31 @@ body {
     transition: none !important;
   }
 }
+
+/* Align paired headers and fill portrait columns without stretching images. */
+@media (min-width:561px) {
+  .portrait { align-self:stretch; aspect-ratio:auto; min-height:0; }
+  .portrait::before { content:""; display:block; aspect-ratio:4/5; }
+  .photo { object-position:center 20%; }
+  .card.open .quote-panel blockquote { margin-block:auto; padding-bottom:20px; }
+}
+@media (min-width:1001px) {
+  .card-header { min-height:var(--paired-header-height,0px); }
+}
+/* Custom playback controls with native range input and keyboard support. */
+.audio-wrap .custom-player { display:grid; grid-template-columns:44px minmax(0,1fr); gap:10px; align-items:center; }
+.custom-player button { width:44px; height:44px; border:0; border-radius:50%; background:#e5bb68; color:#173c35; cursor:pointer; font-size:18px; }
+.custom-player button:focus-visible,.custom-player input:focus-visible { outline:2px solid #f6f4e9; outline-offset:4px; }
+.custom-player input { width:100%; min-width:0; accent-color:#e5bb68; margin:8px 0; cursor:pointer; }
+.custom-player .player-times { display:flex; justify-content:space-between; font-variant-numeric:tabular-nums; }
+.audio-wrap .sample-note { font-style:italic; }
+.audio-wrap audio[hidden] { display:none; }
 </style>
 </head>
 <body>
 <main class="page">
 <header class="intro">
-<div class="eyebrow">Pairing Knowledges</div><h1>Perspectives on pairing knowledges</h1><p>Explore how Elders, researchers and practitioners bring different knowledge systems together and what this makes possible in their work.</p><p>Select a speaker to explore their perspective.</p>
+<div class="eyebrow">Pairing Knowledges</div><h1>Perspectives from the field</h1><p>Explore how Elders, researchers and practitioners bring different knowledge systems together and what this makes possible in their work.</p><p>Select a speaker to explore their perspective.</p>
 </header>
 <section aria-label="Speaker quotations" class="grid">
 <article class="card" id="card-1">
@@ -459,7 +478,7 @@ body {
 <div class="quote-panel" hidden="" id="quote-1"><blockquote>“Collaborative work means you and I decide together how we're going to move forward. We look at the strengths of each other, we look at the strengths of each other. […] Two of us together, we put our knowledge together. We have different kind of skill sets, different way of looking at resources.”</blockquote>
 <div class="audio-wrap">
 <audio controls preload="metadata" aria-label="Sample audio for speaker 1" aria-describedby="audio-note-1" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
-<span id="audio-note-1">Sample audio for demonstration purposes.</span>
+<span id="audio-note-1" class="sample-note">Sample audio</span>
 </div>
 </div>
 </div>
@@ -480,7 +499,7 @@ body {
 <div class="quote-panel" hidden="" id="quote-2"><blockquote>“Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.”</blockquote>
 <div class="audio-wrap">
 <audio controls preload="metadata" aria-label="Sample audio for speaker 2" aria-describedby="audio-note-2" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
-<span id="audio-note-2">Sample audio for demonstration purposes.</span>
+<span id="audio-note-2" class="sample-note">Sample audio</span>
 </div>
 </div>
 </div>
@@ -501,7 +520,7 @@ body {
 <div class="quote-panel" hidden="" id="quote-3"><blockquote>“I think braiding knowledge is the culmination of the two worldviews, the Western scientific view and the traditional knowledge view ... When we have imbalances in those two worldviews we can end up with processes or results that are not reflective of our true values or our true knowledge.”</blockquote>
 <div class="audio-wrap">
 <audio controls preload="metadata" aria-label="Sample audio for speaker 3" aria-describedby="audio-note-3" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
-<span id="audio-note-3">Sample audio for demonstration purposes.</span>
+<span id="audio-note-3" class="sample-note">Sample audio</span>
 </div>
 </div>
 </div>
@@ -522,7 +541,7 @@ body {
 <div class="quote-panel" hidden="" id="quote-4"><blockquote>“In its simplest form, it's really about bringing knowledge and information together in a respectful way to better understand the issues you're up against and to make informed decisions.”</blockquote>
 <div class="audio-wrap">
 <audio controls preload="metadata" aria-label="Sample audio for speaker 4" aria-describedby="audio-note-4" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
-<span id="audio-note-4">Sample audio for demonstration purposes.</span>
+<span id="audio-note-4" class="sample-note">Sample audio</span>
 </div>
 </div>
 </div>
@@ -543,7 +562,7 @@ body {
 <div class="quote-panel" hidden="" id="quote-5"><blockquote>“It's really upholding and uplifting the integrity of Indigenous knowledges, the diversity of Indigenous knowledges, alongside Western approaches. So, that kind of two wings of an eagle, or the Two-Eyed Seeing approach, that with both, we can come up with the most equitable, most just, most caring solutions to the collective problems in front of us.”</blockquote>
 <div class="audio-wrap">
 <audio controls preload="metadata" aria-label="Sample audio for speaker 5" aria-describedby="audio-note-5" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
-<span id="audio-note-5">Sample audio for demonstration purposes.</span>
+<span id="audio-note-5" class="sample-note">Sample audio</span>
 </div>
 </div>
 </div>
@@ -564,14 +583,14 @@ body {
 <div class="quote-panel" hidden="" id="quote-6"><blockquote>“Modern technology is very beneficial to what we can adopt in our healing process of reconnecting to the land. […] We need to utilize the tools that are before us in a good way. I think that's what decolonization is all about—is creating something new, but still continuing with our same values, our teachings […] something new that fits the times.”</blockquote>
 <div class="audio-wrap">
 <audio controls preload="metadata" aria-label="Sample audio for speaker 6" aria-describedby="audio-note-6" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
-<span id="audio-note-6">Sample audio for demonstration purposes.</span>
+<span id="audio-note-6" class="sample-note">Sample audio</span>
 </div>
 </div>
 </div>
 <button aria-controls="quote-6" aria-expanded="false" aria-label="View quote by Terry Dorward" class="open-trigger" type="button">
 </button>
 </article>
-</section><p class="note">Prototype: temporary portraits for layout testing. Image permissions and audio recordings remain to be confirmed before publication.</p>
+</section><p class="note">Prototype: portraits are temporary and subject to permission. Sample audio is synthetic narration for demonstration, not original interview audio.</p>
 </main>
 <script>
 // Each card is an independent disclosure; other cards remain open.
@@ -625,6 +644,44 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
     closeCard(card, true);
   }
+});
+
+// Measure natural header heights, then match each desktop pair.
+function alignHeaders() {
+  const headers = cards.map(card => card.querySelector('.card-header'));
+  headers.forEach(h => h.style.removeProperty('--paired-header-height'));
+  if (!matchMedia('(min-width:1001px)').matches) return;
+  for (let i=0;i<headers.length;i+=2) {
+    const pair=headers.slice(i,i+2);
+    const height=Math.ceil(Math.max(...pair.map(h=>h.getBoundingClientRect().height)));
+    pair.forEach(h=>h.style.setProperty('--paired-header-height',height+'px'));
+  }
+}
+window.addEventListener('resize',alignHeaders);
+document.fonts?.ready.then(alignHeaders);
+alignHeaders();
+// Enhance native audio with custom controls; retain native fallback without JavaScript.
+const formatTime = seconds => Number.isFinite(seconds) ? Math.floor(seconds/60)+':'+String(Math.floor(seconds%60)).padStart(2,'0') : '0:00';
+players.forEach((audio,i)=>{
+  const name=cards[i].querySelector('h2').firstChild.textContent.trim();
+  const ui=document.createElement('div');
+  ui.className='custom-player';
+  ui.innerHTML='<button type="button">▶</button><div><span>Listen to excerpt</span><input type="range" min="0" max="1" step="0.1" value="0" disabled><div class="player-times"><span>0:00</span><span>0:00</span></div></div>';
+  const button=ui.querySelector('button'), seek=ui.querySelector('input'), times=ui.querySelectorAll('.player-times span');
+  seek.setAttribute('aria-label','Playback position for '+name);
+  function sync(){
+    button.textContent=audio.paused?'▶':'Ⅱ';
+    button.setAttribute('aria-label',(audio.paused?'Play':'Pause')+' sample audio for '+name);
+    seek.disabled=!Number.isFinite(audio.duration)||audio.duration<=0;
+    seek.max=seek.disabled?1:audio.duration;
+    seek.value=audio.currentTime;
+    seek.setAttribute('aria-valuetext',formatTime(audio.currentTime)+' of '+formatTime(audio.duration));
+    times[0].textContent=formatTime(audio.currentTime); times[1].textContent=formatTime(audio.duration);
+  }
+  button.addEventListener('click',()=>{if(audio.paused){if(audio.ended)audio.currentTime=0;audio.play().catch(()=>{audio.hidden=false;ui.hidden=true;ui.style.display='none';});}else audio.pause();});
+  seek.addEventListener('input',()=>{audio.currentTime=Number(seek.value);sync();});
+  ['loadedmetadata','durationchange','timeupdate','play','pause','ended','seeked'].forEach(event=>audio.addEventListener(event,sync));
+  audio.before(ui); audio.hidden=true; sync();
 });
 </script>
 </body>
