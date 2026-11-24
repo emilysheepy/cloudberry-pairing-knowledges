@@ -62,11 +62,11 @@ body {
 .card {
   position: relative;
   display: grid;
-  grid-template-columns: 42% minmax(0,58%);
-  grid-template-rows: auto minmax(0,1fr);
+  grid-template-columns: 36% minmax(0,64%);
+  grid-template-rows: auto 1fr;
   align-items: stretch;
   min-width: 0;
-  min-height: 360px;
+  min-height: 0;
   background: #e5e7db;
   border: 2px solid #173c35;
   border-radius: 12px;
@@ -77,7 +77,7 @@ body {
 
 /* Editorial header */
 .card-header {
-  grid-column: 2;
+  grid-column: 1 / -1;
   grid-row: 1;
   min-width: 0;
   min-height: 126px;
@@ -187,9 +187,9 @@ body {
 /* Speaker portrait */
 .portrait {
   grid-column: 1;
-  grid-row: 1 / span 2;
+  grid-row: 2;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 0;
   background: #aebbb0;
 }
 .photo {
@@ -213,7 +213,7 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 10px 24px 28px;
   border-top: 1px solid rgba(23,60,53,.17);
 }
@@ -223,10 +223,14 @@ body {
   color: #4a5a54;
   margin: 0;
 }
-.affiliation strong {
-  color: #253e36;
+.affiliation span {
+  display: block;
+}
+.affiliation span + span {
+  margin-top: 4px;
 }
 .card.open .content {
+  justify-content: flex-start;
   background: #214e45;
   color: #f6f4e9;
   padding: 14px 24px 28px;
@@ -431,12 +435,12 @@ body {
 <body>
 <main class="page">
 <header class="intro">
-<div class="eyebrow">Braiding Knowledges · Interaction study</div><h1>Voices on braiding knowledges</h1><p>Six-card responsive interaction study. Each editorial headline reads as a sentence: speaker name, then the topic of their remarks. The card-level corner action, compact mobile crop, defined border and persistent portrait are retained.</p>
+<div class="eyebrow">Braiding Knowledges · Interaction study</div><h1>Voices on braiding knowledges</h1><p>Explore perspectives on braiding knowledges by selecting a speaker card to reveal a quotation. Multiple quotations can remain open for comparison.</p>
 </header>
 <section aria-label="Speaker quotations" class="grid">
 <article class="card" id="card-1">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on what braiding knowledges makes possible</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield, sample card 1" class="close-trigger" hidden="" type="button">
 </button>
@@ -444,7 +448,10 @@ body {
 <div class="portrait"><img alt="Sample portrait of Elder Mary Jane Johnson (Gùdia), repeated as a layout placeholder" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-1"><p class="affiliation"><strong>Métis Nation of Alberta</strong><br/>Vice-Provost, Indigenous Programming and Research; Professor of Mathematics Education, University of Alberta</p>
+<div class="summary" id="summary-1"><p class="affiliation"><span>Métis Nation of Alberta</span>
+<span>Vice-Provost, Indigenous Programming and Research</span>
+<span>Professor of Mathematics Education</span>
+<span>University of Alberta</span></p>
 </div>
 <div class="quote-panel" hidden="" id="quote-1"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
@@ -457,7 +464,7 @@ body {
 </article>
 <article class="card" id="card-2">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on what braiding knowledges makes possible</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield, sample card 2" class="close-trigger" hidden="" type="button">
 </button>
@@ -465,7 +472,10 @@ body {
 <div class="portrait"><img alt="Sample portrait of Elder Mary Jane Johnson (Gùdia), repeated as a layout placeholder" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-2"><p class="affiliation"><strong>Métis Nation of Alberta</strong><br/>Vice-Provost, Indigenous Programming and Research; Professor of Mathematics Education, University of Alberta</p>
+<div class="summary" id="summary-2"><p class="affiliation"><span>Métis Nation of Alberta</span>
+<span>Vice-Provost, Indigenous Programming and Research</span>
+<span>Professor of Mathematics Education</span>
+<span>University of Alberta</span></p>
 </div>
 <div class="quote-panel" hidden="" id="quote-2"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
@@ -478,7 +488,7 @@ body {
 </article>
 <article class="card" id="card-3">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on what braiding knowledges makes possible</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield, sample card 3" class="close-trigger" hidden="" type="button">
 </button>
@@ -486,7 +496,10 @@ body {
 <div class="portrait"><img alt="Sample portrait of Elder Mary Jane Johnson (Gùdia), repeated as a layout placeholder" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-3"><p class="affiliation"><strong>Métis Nation of Alberta</strong><br/>Vice-Provost, Indigenous Programming and Research; Professor of Mathematics Education, University of Alberta</p>
+<div class="summary" id="summary-3"><p class="affiliation"><span>Métis Nation of Alberta</span>
+<span>Vice-Provost, Indigenous Programming and Research</span>
+<span>Professor of Mathematics Education</span>
+<span>University of Alberta</span></p>
 </div>
 <div class="quote-panel" hidden="" id="quote-3"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
@@ -499,7 +512,7 @@ body {
 </article>
 <article class="card" id="card-4">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on what braiding knowledges makes possible</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield, sample card 4" class="close-trigger" hidden="" type="button">
 </button>
@@ -507,7 +520,10 @@ body {
 <div class="portrait"><img alt="Sample portrait of Elder Mary Jane Johnson (Gùdia), repeated as a layout placeholder" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-4"><p class="affiliation"><strong>Métis Nation of Alberta</strong><br/>Vice-Provost, Indigenous Programming and Research; Professor of Mathematics Education, University of Alberta</p>
+<div class="summary" id="summary-4"><p class="affiliation"><span>Métis Nation of Alberta</span>
+<span>Vice-Provost, Indigenous Programming and Research</span>
+<span>Professor of Mathematics Education</span>
+<span>University of Alberta</span></p>
 </div>
 <div class="quote-panel" hidden="" id="quote-4"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
@@ -520,7 +536,7 @@ body {
 </article>
 <article class="card" id="card-5">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on what braiding knowledges makes possible</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield, sample card 5" class="close-trigger" hidden="" type="button">
 </button>
@@ -528,7 +544,10 @@ body {
 <div class="portrait"><img alt="Sample portrait of Elder Mary Jane Johnson (Gùdia), repeated as a layout placeholder" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-5"><p class="affiliation"><strong>Métis Nation of Alberta</strong><br/>Vice-Provost, Indigenous Programming and Research; Professor of Mathematics Education, University of Alberta</p>
+<div class="summary" id="summary-5"><p class="affiliation"><span>Métis Nation of Alberta</span>
+<span>Vice-Provost, Indigenous Programming and Research</span>
+<span>Professor of Mathematics Education</span>
+<span>University of Alberta</span></p>
 </div>
 <div class="quote-panel" hidden="" id="quote-5"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
@@ -541,7 +560,7 @@ body {
 </article>
 <article class="card" id="card-6">
 <div class="card-header"><h2>Florence Glanfield<span class="topic">on what braiding knowledges makes possible</span></h2>
-<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
+<div aria-hidden="true" class="corner"><span class="corner-view"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3l13 9-6.5 1.5L9 20 5 3Z"></path><path d="M13 2v3"></path><path d="m18 5-2 2"></path><path d="M19 10h3"></path></svg><span>View<br/>quote</span></span><span class="corner-close">×<small>Close</small></span>
 </div>
 <button aria-label="Close quote by Florence Glanfield, sample card 6" class="close-trigger" hidden="" type="button">
 </button>
@@ -549,7 +568,10 @@ body {
 <div class="portrait"><img alt="Sample portrait of Elder Mary Jane Johnson (Gùdia), repeated as a layout placeholder" class="photo" src="gallery-placeholder.jpg"/>
 </div>
 <div class="content">
-<div class="summary" id="summary-6"><p class="affiliation"><strong>Métis Nation of Alberta</strong><br/>Vice-Provost, Indigenous Programming and Research; Professor of Mathematics Education, University of Alberta</p>
+<div class="summary" id="summary-6"><p class="affiliation"><span>Métis Nation of Alberta</span>
+<span>Vice-Provost, Indigenous Programming and Research</span>
+<span>Professor of Mathematics Education</span>
+<span>University of Alberta</span></p>
 </div>
 <div class="quote-panel" hidden="" id="quote-6"><blockquote>Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.</blockquote>
 <div class="audio-wrap">
