@@ -277,37 +277,36 @@ body {
 /* Responsive layout */
 @media (min-width:561px) {
   .card {
-    grid-template-columns: 34% minmax(0,66%);
+    grid-template-columns: 36% minmax(0,64%);
     grid-template-rows: auto 1fr;
     min-height: 0;
-    background: #214e45;
+    background: #e5e7db;
   }
   .card-header {
-    display: block;
+    grid-column: 1 / -1;
+    grid-row: 1;
     min-height: 0;
-    padding: 18px 20px 16px;
+    padding: 18px 142px 18px 20px;
   }
   .card-header h2 {
     font-size: 25px;
     font-weight: 400;
   }
-  .card-header h2::before {
-    content: "";
-    float: right;
-    width: 102px;
-    height: 48px;
+  .card-header .topic {
+    margin-top: 5px;
+    font-size: .74em;
+    line-height: 1.28;
   }
-  .card-header .topic { clear: none; margin-top: 5px; font-size: .74em; line-height: 1.28; }
   .corner,.close-trigger {
-    width: 106px;
-    height: 48px;
-    bottom: auto;
+    width: 132px;
   }
-  .corner { padding: 5px 7px 5px 20px; }
+  .corner { padding: 8px 9px 8px 28px; }
   .corner-view { font-size: 13px; }
   .corner-view svg { width: 26px; height: 26px; }
   .corner-close { font-size: 26px; }
   .portrait {
+    grid-column: 1;
+    grid-row: 2;
     align-self: start;
     aspect-ratio: 4/5;
     min-height: 0;
@@ -317,6 +316,7 @@ body {
   .photo { position: absolute; inset: 0; object-position: center top; }
   .content, .card.open .content { padding: 14px 20px 18px; }
   .content { background: #e5e7db; }
+  .card.open { background: #214e45; }
 }
 @media (max-width:1000px) {
   .grid {
