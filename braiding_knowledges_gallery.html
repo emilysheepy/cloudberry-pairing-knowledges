@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Braiding Knowledges — Voices on braiding knowledges</title>
+<title>Pairing Knowledges — Perspectives on pairing knowledges</title>
 <style>
 
 /* Page layout and typography */
@@ -242,25 +242,27 @@ body {
   font: clamp(16px,1.25vw,18px)/1.45 Georgia,serif;
   margin: 0 0 20px;
 }
+/* Native audio controls adapt to the available card width. */
 .audio-wrap {
   margin-top: auto;
   border-top: 1px solid #86a69a;
-  padding-top: 14px;
+  padding-top: 12px;
   display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 7px;
+  align-items: stretch;
+  min-width: 0;
 }
-.audio-wrap button {
-  background: transparent;
-  border: 1px solid #b1c8bd;
-  border-radius: 24px;
-  color: #f6f4e9;
-  padding: 9px 13px;
+.audio-wrap audio {
+  display: block;
+  width: 100%;
+  height: 40px;
+  min-width: 0;
 }
-.audio-wrap button:disabled {
-  opacity: .72;
-  cursor: not-allowed;
+.audio-wrap audio:focus-visible {
+  outline: 2px solid #e5bb68;
+  outline-offset: 3px;
+  border-radius: 20px;
 }
 .audio-wrap span {
   font-size: 12px;
@@ -439,7 +441,7 @@ body {
 <body>
 <main class="page">
 <header class="intro">
-<div class="eyebrow">Braiding Knowledges · Interaction study</div><h1>Voices on braiding knowledges</h1><p>Explore perspectives on braiding knowledges by selecting a speaker card to reveal a quotation. Multiple quotations can remain open for comparison.</p>
+<div class="eyebrow">Pairing Knowledges</div><h1>Perspectives on pairing knowledges</h1><p>Explore how Elders, researchers and practitioners bring different knowledge systems together and what this makes possible in their work.</p><p>Select a speaker to explore their perspective.</p>
 </header>
 <section aria-label="Speaker quotations" class="grid">
 <article class="card" id="card-1">
@@ -456,7 +458,8 @@ body {
 </div>
 <div class="quote-panel" hidden="" id="quote-1"><blockquote>“Collaborative work means you and I decide together how we're going to move forward. We look at the strengths of each other, we look at the strengths of each other. […] Two of us together, we put our knowledge together. We have different kind of skill sets, different way of looking at resources.”</blockquote>
 <div class="audio-wrap">
-<button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
+<audio controls preload="metadata" aria-label="Sample audio for speaker 1" aria-describedby="audio-note-1" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
+<span id="audio-note-1">Sample audio for demonstration purposes.</span>
 </div>
 </div>
 </div>
@@ -476,7 +479,8 @@ body {
 </div>
 <div class="quote-panel" hidden="" id="quote-2"><blockquote>“Those systems that I was taught, the way I understood the world from my family and from the knowledge systems I grew up in and with, I was kind of invited to leave them at the door and not have a place for them in the academy. And I see braiding knowledges as giving voice to those knowledge systems and contributing to larger-scale discussions.”</blockquote>
 <div class="audio-wrap">
-<button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
+<audio controls preload="metadata" aria-label="Sample audio for speaker 2" aria-describedby="audio-note-2" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
+<span id="audio-note-2">Sample audio for demonstration purposes.</span>
 </div>
 </div>
 </div>
@@ -496,7 +500,8 @@ body {
 </div>
 <div class="quote-panel" hidden="" id="quote-3"><blockquote>“I think braiding knowledge is the culmination of the two worldviews, the Western scientific view and the traditional knowledge view ... When we have imbalances in those two worldviews we can end up with processes or results that are not reflective of our true values or our true knowledge.”</blockquote>
 <div class="audio-wrap">
-<button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
+<audio controls preload="metadata" aria-label="Sample audio for speaker 3" aria-describedby="audio-note-3" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
+<span id="audio-note-3">Sample audio for demonstration purposes.</span>
 </div>
 </div>
 </div>
@@ -516,7 +521,8 @@ body {
 </div>
 <div class="quote-panel" hidden="" id="quote-4"><blockquote>“In its simplest form, it's really about bringing knowledge and information together in a respectful way to better understand the issues you're up against and to make informed decisions.”</blockquote>
 <div class="audio-wrap">
-<button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
+<audio controls preload="metadata" aria-label="Sample audio for speaker 4" aria-describedby="audio-note-4" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
+<span id="audio-note-4">Sample audio for demonstration purposes.</span>
 </div>
 </div>
 </div>
@@ -536,7 +542,8 @@ body {
 </div>
 <div class="quote-panel" hidden="" id="quote-5"><blockquote>“It's really upholding and uplifting the integrity of Indigenous knowledges, the diversity of Indigenous knowledges, alongside Western approaches. So, that kind of two wings of an eagle, or the Two-Eyed Seeing approach, that with both, we can come up with the most equitable, most just, most caring solutions to the collective problems in front of us.”</blockquote>
 <div class="audio-wrap">
-<button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
+<audio controls preload="metadata" aria-label="Sample audio for speaker 5" aria-describedby="audio-note-5" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
+<span id="audio-note-5">Sample audio for demonstration purposes.</span>
 </div>
 </div>
 </div>
@@ -556,7 +563,8 @@ body {
 </div>
 <div class="quote-panel" hidden="" id="quote-6"><blockquote>“Modern technology is very beneficial to what we can adopt in our healing process of reconnecting to the land. […] We need to utilize the tools that are before us in a good way. I think that's what decolonization is all about—is creating something new, but still continuing with our same values, our teachings […] something new that fits the times.”</blockquote>
 <div class="audio-wrap">
-<button disabled="" type="button">▶ Play audio</button><span>Audio not yet supplied</span>
+<audio controls preload="metadata" aria-label="Sample audio for speaker 6" aria-describedby="audio-note-6" src="sample-audio.mp3">Your browser does not support audio playback.</audio>
+<span id="audio-note-6">Sample audio for demonstration purposes.</span>
 </div>
 </div>
 </div>
@@ -571,6 +579,10 @@ const cards = [...document.querySelectorAll('.card')];
 
 function closeCard(card, focus = false) {
   if (!card.classList.contains('open')) return;
+  // Stop and reset playback when the quotation is closed.
+  const audio = card.querySelector('audio');
+  audio.pause();
+  if (audio.readyState > 0) audio.currentTime = 0;
   card.classList.remove('open');
   card.querySelector('.summary').hidden = false;
   card.querySelector('.quote-panel').hidden = true;
@@ -593,6 +605,16 @@ function openCard(card) {
 cards.forEach(card => {
   card.querySelector('.open-trigger').addEventListener('click', () => openCard(card));
   card.querySelector('.close-trigger').addEventListener('click', () => closeCard(card, true));
+});
+
+// Allow only one recording to play at a time.
+const players = [...document.querySelectorAll('.audio-wrap audio')];
+players.forEach(player => {
+  player.addEventListener('play', () => {
+    players.forEach(other => {
+      if (other !== player) other.pause();
+    });
+  });
 });
 
 // Escape closes only the expanded card containing keyboard focus.
